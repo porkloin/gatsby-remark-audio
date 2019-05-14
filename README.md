@@ -12,21 +12,32 @@ npm install gatsby-remark-audio
 
 ## Usage
 
-In your markdown
+In your markdown:
 ```
-audio: /static/shots-demo-369bfe714a6b8981ecfc743f7e7e7008.mp4
+```markdown
+`audio: /static/test.mp3`
+
+`audio: https://www.mytestaudiosource.com/test.mp3`
 ```
 
-Add the following in your `gatsby-config.js`
+Add the following in your `gatsby-config.js` (must be included under the `plugins` key on gatsby-transformer-remark)
 ```javascript
 {
-	resolve: 'gatsby-remark-audio',
-	options: {
-		preload: 'auto',
-		loop: false,
-		controls: true,
-		muted: false,
-		autoplay: false
-	}
+  resolve: `gatsby-transformer-remark`,
+  options: {
+    plugins: [
+      {
+        resolve: 'gatsby-remark-audio',
+        options: {
+          preload: 'auto',
+          loop: false,
+          controls: true,
+          muted: false,
+          autoplay: false
+        }
+      },
+    ...skipped lines
+    ]
+  }
 }
 ```
