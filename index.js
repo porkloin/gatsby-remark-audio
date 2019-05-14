@@ -1,35 +1,34 @@
 const visit = require('unist-util-visit');
 
-const addVideo = ({ markdownAST }, options) => {
+const addAudio = ({ markdownAST }, options) => {
 
 	visit(markdownAST, 'inlineCode', (node) => {
 		const { value } = node;
-		const matches = value.match(/video:?\s(.*)+/i);
+		const matches = value.match(/audio:?\s(.*)+/i);
 
 		if(matches) {
 			const url = matches[1].trim();
 
 			node.type = 'html';
-			node.value = renderVideoTag(url, options);
+			node.value = renderAudioTag(url, options);
 		}
 	});
 
 };
 
-const renderVideoTag = (url, options) => {
+const renderAudioTag = (url, options) => {
 
-	const videoNode = `
-		<video
+	const audioNode = `
+		<audio
 			src=${url}
-			width="${options.width}"
-			height="${options.height}"
 			preload="${options.preload}"
 			muted="${options.muted}"
 			${options.autoplay ? 'autoplay' : ''}
-		></video>
+			${options.loop ? 'loop' : ''}
+		></audio>
 	`;
 
-	return videoNode;
+	return audioNode;
 };
 
-module.exports = addVideo;
+module.exports = addAudio;

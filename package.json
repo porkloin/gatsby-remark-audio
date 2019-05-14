@@ -1,6 +1,6 @@
 {
-  "name": "gatsby-remark-video",
-  "version": "1.2.1",
+  "name": "gatsby-remark-audio",
+  "version": "1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/rehat101/gatsby-remark-video"
+    "url": "https://github.com/porkloin/gatsby-remark-audio"
   },
   "keywords": [
     "gatsby",
     "gatsby-plugin",
     "remark",
-    "video"
+    "audio"
   ],
-  "author": "Taher",
+  "author": "porkloin",
   "license": "MIT",
   "dependencies": {
     "unist-util-visit": "^1.4.0"
