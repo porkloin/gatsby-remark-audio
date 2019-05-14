@@ -23,8 +23,8 @@ Add the following in your `gatsby-config.js`
 	resolve: 'gatsby-remark-audio',
 	options: {
 		preload: 'auto',
-    controls: true,
-    loop: false,
+		loop: false,
+		controls: true,
 		muted: false,
 		autoplay: false
 	}
