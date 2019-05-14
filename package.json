@@ -1,7 +1,7 @@
 {
   "name": "gatsby-remark-audio",
-  "version": "1.0.1",
-  "description": "",
+  "version": "1.0.2",
+  "description": "A gatsby remark plugin for rendering HTML5 audio tags for local or remote audio files",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

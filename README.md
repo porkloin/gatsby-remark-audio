@@ -3,9 +3,10 @@
 
 ### Forked from [gatsby-remark-video](https://github.com/rehat101/gatsby-remark-video)
 
-Embeds audio tag in your gatsby project
+This is a Gatsby remark plugin that creates HTML5 audio tags from local or remote audio sources.
 
 ## Installation
+
 ```
 npm install gatsby-remark-audio
 ```
@@ -13,7 +14,7 @@ npm install gatsby-remark-audio
 ## Usage
 
 In your markdown:
-```
+
 ```markdown
 `audio: /static/test.mp3`
 
