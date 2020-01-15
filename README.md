@@ -13,7 +13,7 @@ npm install gatsby-remark-audio
 
 ## Usage
 
-In your markdown:
+### In Your Markdown Files
 
 ```markdown
 `audio: /static/test.mp3`
@@ -21,6 +21,9 @@ In your markdown:
 `audio: https://www.mytestaudiosource.com/test.mp3`
 ```
 
+### In Your gatsby-config.js
+
+#### With Remark (i.e. using plugin gatsby-transformer-remark)
 Add the following in your `gatsby-config.js` (must be included under the `plugins` key on gatsby-transformer-remark)
 ```javascript
 {
@@ -35,10 +38,31 @@ Add the following in your `gatsby-config.js` (must be included under the `plugin
           controls: true,
           muted: false,
           autoplay: false
-        }
+        },
       },
-    ...skipped lines
-    ]
-  }
-}
+    ],
+  },
+},
+```
+
+#### With MDX (i.e. using plugin gatsby-plugin-mdx)
+Add the following in your `gatsby-config.js` (must be included under the `gatsbyRemarkPlugins` key on gatsby-plugin-mdx). See [here](https://mdxjs.com/advanced/plugins) for background.
+```javascript
+{
+  resolve: `gatsby-plugin-mdx`,
+  options: {
+    gatsbyRemarkPlugins: [
+      {
+        resolve: 'gatsby-remark-audio',
+        options: {
+          preload: 'auto',
+          loop: false,
+          controls: true,
+          muted: false,
+          autoplay: false
+        },
+      },
+    ],
+  },
+},
 ```
